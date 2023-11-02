@@ -27,12 +27,14 @@ app.use(express.json())
 app.use(express.static('server/public'));
 
 // GET & POST Routes go here
-
+// Server sends guesses to the client
 app.get('/guesses', (req, res) => {
   console.log('we got a get req');
   res.send(guesses);
 })
 
+// Server is getting the guesses from the client and updating the guesses array 
+// with the new guesses
 app.post('/guesses', (req, res) => {
   console.log('we got POST req');
   let newGuesses = req.body

@@ -30,6 +30,19 @@ table {
     height: 2.15em;
   }
 
+  /* Classes for guesses */
+.too-low{
+    background-color: red;
+}
+
+.too-high{
+    background-color: yellow;
+}
+
+.correct{
+    background-color: green;
+}
+
   /* FORM ELEMENTS */
 
 input {
@@ -42,4 +55,6 @@ input {
     padding: .5em;
     width: 75px;
   }
+
+  
   
