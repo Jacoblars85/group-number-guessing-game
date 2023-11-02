@@ -14,8 +14,6 @@ let roundNum = 0;
 
 let randomNumber = makeRandom(1, 25);
 
-console.log('the random number is:', randomNumber);
-
 const guesses = [];
 
 // This must be added before GET & POST routes.
@@ -29,8 +27,9 @@ app.use(express.static('server/public'));
 // GET & POST Routes go here
 // Server sends guesses to the client
 app.get('/guesses', (req, res) => {
-  console.log('we got a get req');
-  res.send(guesses);
+  console.log('we got a get req', roundNum);
+  console.log("Guesses at req:", guesses);
+  res.send(guesses[roundNum-1]);
 })
 
 // Server is getting the guesses from the client and updating the guesses array 
@@ -38,18 +37,20 @@ app.get('/guesses', (req, res) => {
 app.post('/guesses', (req, res) => {
   console.log('we got POST req');
   let newGuesses = req.body
-  for(let guess of newGuesses){
-    guess.round = roundNum;
-    if(guess < randomNumber){
-      guess.status = 'too-low';
-    } else if(guess > randomNumber){
-      guess.status = 'too-high';
+  console.log(newGuesses);
+  console.log(randomNumber);
+  for(let i=0; i<4; i++){
+    if(newGuesses[i] < randomNumber){
+      newGuesses.push('too-low');
+    } else if(newGuesses[i] > randomNumber){
+      newGuesses.push('too-high');
     } else {
-      guess.
+      newGuesses.push('correct');
     }
   }
   guesses.push(newGuesses)
   res.sendStatus(201)
+  console.log(newGuesses);
   roundNum++
 })
 

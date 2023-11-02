@@ -13,13 +13,13 @@
 <body>
     <h1>Make your guess</h1>
 
-     <form>
+     <form onsubmit="makeGuesses(event)">
 
     <input id="Hannah" type="number" placeholder="Hannah's Guess">
     <input id="Ryan" type="number" placeholder="Ryan's Guess">
     <input id="Abubakar" type="number" placeholder="Abubakar's Guess">
-    <input id="Jacob" type="number" placeholder="Sexy man guess">
-    <button onclick="makeGuesses(event)">Submit</button>
+    <input id="Jacob" type="number" placeholder="Jacob's Guess">
+    <button>Submit</button>
      </form>
 
      <table>
@@ -29,18 +29,11 @@
           <th>Hannah</th>
           <th>Ryan</th>
           <th>Abubakar</th>
-          <th>Sexy Guy</th>
+          <th>Jacob</th>
         </tr>
        
       </thead>
       <tbody id="roundTable">
-        <tr>
-          <td>1</td>
-          <td>12</td>
-          <td>4</td>
-          <td>8</td>
-          <td>22</td>
-        </tr>
       </tbody>
      </table>
 </body>
