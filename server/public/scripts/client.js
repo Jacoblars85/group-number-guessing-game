@@ -61,5 +61,24 @@ function makeGuesses(event) {
   guesses = [];
 }
 
+function renderGuesses(guesses){
+  // Make a variable for the table body
+  let tableBody = document.getElementById('roundTable');
+  tableBody.innerHTML = '';
+  let roundNum = guesses.length/4;
+  for(let guess of guesses){
+    // This will make it so only the current round guesses get put in the table
+    
+    if(guess.round === roundNum){
+      tableBody.innerHTML += 
+      `
+      <tr>
+        <td>${roundNum}</td>
+        
+      </tr>
+      `
+    }
+  }
+}
 
 onReady()

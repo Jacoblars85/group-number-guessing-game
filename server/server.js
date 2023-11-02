@@ -38,6 +38,16 @@ app.get('/guesses', (req, res) => {
 app.post('/guesses', (req, res) => {
   console.log('we got POST req');
   let newGuesses = req.body
+  for(let guess of newGuesses){
+    guess.round = roundNum;
+    if(guess < randomNumber){
+      guess.status = 'too-low';
+    } else if(guess > randomNumber){
+      guess.status = 'too-high';
+    } else {
+      guess.
+    }
+  }
   guesses.push(newGuesses)
   res.sendStatus(201)
   roundNum++
