@@ -83,4 +83,8 @@ function renderGuesses(guesses){
     }
   }
 
+  function resetButton() {
+    
+  }
+
 onReady()
