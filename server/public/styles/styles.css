@@ -1,0 +1,45 @@
+/* table stuff */
+
+table {
+    width: 100%;
+    text-align: left;
+  }
+  table, th, td {
+    border: 1px solid black;
+    color: black;
+    border-collapse: collapse;
+    height: 2.15em;
+  }
+  th, td {
+    padding: .5em;
+    min-width: 3.5em;
+  }
+  thead, tfoot{
+    background: #7a7a7a;
+    color: #fcfcfc;
+  }
+  tbody tr:nth-child(odd){ 
+    background: #fcfcfc;
+  }
+  tbody tr:nth-child(even){
+    background: #dcdcdc;
+  }
+  tfoot {
+    background: gray;
+    border: 1px solid black;
+    height: 2.15em;
+  }
+
+  /* FORM ELEMENTS */
+
+input {
+    padding: .5em;
+    width: 150px;
+    background: #FCFCFC;
+    border: 2px solid;
+  }
+  button {
+    padding: .5em;
+    width: 75px;
+  }
+  
