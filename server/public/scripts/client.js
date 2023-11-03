@@ -84,7 +84,18 @@ function renderGuesses(guesses){
   }
 
   function resetButton() {
-    
+    document.getElementById('roundTable').innerHTML = ''
+    let clearValues = true;
+    roundNum = 0;
+
+    axios({
+      method: 'POST',
+      url: '/clear',
+      data: clearValues
+    }).then((response) => {
+      console.log("does this work clearing?");
+      clearValues = false;
+    })
   }
 
 onReady()

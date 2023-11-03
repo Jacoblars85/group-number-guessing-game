@@ -14,7 +14,7 @@ let roundNum = 0;
 
 let randomNumber = makeRandom(1, 25);
 
-const guesses = [];
+let guesses = [];
 
 // This must be added before GET & POST routes.
 app.use(bodyParser.urlencoded({extended:true}))
@@ -54,6 +54,18 @@ app.post('/guesses', (req, res) => {
   roundNum++
 })
 
+app.post('/clear', (req, res) => {
+  console.log('we got POST req');
+  let clearValues = req.body
+  if (clearValues) {
+    guesses = []
+    randomNumber = makeRandom(1, 25)
+    roundNum = 0;
+    console.log('we cleared', randomNumber);
+  }
+  res.sendStatus(201)
+
+})
 
 app.listen(PORT, () => {
   console.log ('Server is running on port', PORT)
